@@ -1,6 +1,6 @@
 ---
-title: "Dashboards com R"
-subtitle: "Introdução ao Shiny"
+title: "LatinR"
+subtitle: "Shiny: Zero to Hero"
 author: "<img src = 'https://d33wubrfki0l68.cloudfront.net/9b0699f18268059bdd2e5c21538a29eade7cbd2b/67e5c/img/logo/cursor1-5.png' width = '30%'>"
 date: "`r paste(lubridate::month(Sys.Date(), label = TRUE, abbr = FALSE, locale = 'pt_BR.UTF-8'), 'de', lubridate::year(Sys.Date()))`"
 output:
@@ -18,6 +18,59 @@ output:
 
 ```
 
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+class: middle, center
+
+# Sobre
+
+---
+class: middle, center
+
+## Sobre a Curso-R
+
+.pull-left[
+```{r, echo = FALSE}
+knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/295643c6243701ae6a9bac3fb8ad467ff0ce3c84/d1785/img/logo/cursor1-41.png")
+```
+
+<br>
+<br>
+
+```{r, echo = FALSE}
+knitr::include_graphics("img/logo_r6.png")
+```
+
+]
+
+.pull-right[
+```{r, echo = FALSE}
+knitr::include_graphics("img/produtos.png")
+```
+]
+
+### [www.curso-r.com](https://www.curso-r.com)
+
+---
+## Sobre a apresentação
+
+- Primeira hora: introdução ao Shiny para quem nem sabe o que é Shiny. 
+
+> **Objetivo**: aprendermos a construir um aplicativo simples e colocá-lo na internet.
+
+<br>
+
+- Segunra hora: apresentação de diversos recursos legais do Shiny.
+
+> **Objetivo**: sairmos pessoas motivadas a aprender mais.
+
+class: middle, center
+
+# Introdução ao Shiny
+
+---
 ## Shiny: programando em HTML sem saber HTML
 
 Com o Shiny, podemos produzir aplicativos web em HTML, CSS e JavaScript sem saber programar nessas linguagens. E melhor: sem sair do R!
@@ -72,46 +125,9 @@ shinyApp(ui, server)
 ```
 
 No RStudio, para rodar um aplicativo shiny localmente (o seu computador é o servidor), clique no botão **Run app** logo acima do script.
----
-
-## UI: o que o usuário vai ver
-
-No objeto `ui`, construímos o que será mostrado na tela para o usuário. Nele, devemos:
-
-- Construir o layout do aplicativo.
-
-- Definir quais visualizações serão mostradas (tabelas, gráficos, mapas etc).
-
-- Definir elementos de CSS e JavaScript. **`r blue('[avançado]')`**
-
-Todas as funções que utilizarmos para criar o `ui` retornarão código HTML. O objeto `ui`, portanto, será um grande código HTML.
-
-```{r, eval=FALSE}
-ui <- fluidPage("Olá, mundo!")
-#> <div class="container-fluid">Olá, mundo!</div>
-```
-
-**Neste contexto, serão sinônimos**: UI, interface de usuário, *front-end*, *front*.
 
 ---
-## Server: onde a mágica acontece
-
-A função `server()` vai receber nossos usuais códigos R de manipular bases, gerar tabelas, gráficos, mapas e qualquer outra visualização que quisermos construir.
-
-A função `server()` sempre terá os parâmetros:
-
-- `input`: uma lista com todos parâmetros que o usuário pode mexer.
-
-- `output`: uma lista com todas as visualizações que vamos mostrar para o usuário.
-
-- `session`: uma lista com informações da sessão que está rodando o aplicativo.
-
-O código dentro da função `server()` é executado uma vez quando o app é carregado e **será executado novamente sempre que houver uma interação do usuário**. Por isso precisamos de uma sessão do R rodando por trás para manter um Shiny app funcionando.
-
-**Neste contexto, serão sinônimos**: server, servidor, *back-end*.
-
----
-## Atividade
+## Exemplo
 
 Vamos criar e rodar o exemplo minimal do slide anterior.
 
@@ -180,31 +196,6 @@ Vamos criar e rodar um shiny app com um gráfico como output.
 <center>
 
 ---
-## Acessando outputs no server
-
-O argumento `outputId` das funções `_Output()` é utilizado para nos referirmos aos outputs dentro do server. Todos os outputs criados ficarão dentro da lista `output`.
-
-```{r, eval=FALSE}
-library(shiny)
-
-ui <- fluidPage(
-  "Um histograma",
-  plotOutput(outputId = "hist") #<<
-)
-
-server <- function(input, output, session) {
-  
-  output$hist <- renderPlot({ #<<
-    hist(mtcars$mpg)
-  })
-  
-}
-
-shinyApp(ui, server)
-```
-
-
----
 ## Inputs: dê controle ao usuário
 
 Inputs permitem que o usuário interaja com o seu aplicativo. Eles são criados no UI com funções (geralmente) do tipo `_Input()` e são utilizados dentro do server para alterar as visualizações. Veja alguns exemplos abaixo e acesse [este link](https://shiny.rstudio.com/gallery/widget-gallery.html) para testar como eles funcionam no navegador.
@@ -228,27 +219,6 @@ Vamos colocar um seletor de variáveis no exemplo anterior para permitir que o u
 <br>
 `r blue('Ao RStudio: 03-output-input.R')`
 </center>
-
----
-## Acessando os inputs no server
-
-Para acessar os inputs dentro da função server, utilizamos a lista `input`. Essa lista guardará todos os inputs criados no UI.
-
-.pull-left[
-<img src="img/inputvalues.png" width= "100%">
-]
-
-.pull-right[
-<img src="img/sliderinputexample.png" width= "80%">
-- `input$num` pode ser usado no server para deixar as visualizações dinâmicas.
-]
-<center>
-Fonte: <a href = http://www.rstudio.com/shiny/>rstudio.com/shiny/</a>
-</center>
-
-- `input$num` é um valor reativo, isto é, ele muda conforme ações do usuário.
-
-- Valores reativos só podem ser utilizados dentro de funções reativas.
 
 ---
 ## Shinyapps.io

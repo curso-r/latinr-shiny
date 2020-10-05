@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>LatinR</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/custom-intro.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# LatinR
+## Shiny: Zero to Hero
+### <img src = 'https://d33wubrfki0l68.cloudfront.net/9b0699f18268059bdd2e5c21538a29eade7cbd2b/67e5c/img/logo/cursor1-5.png' width = '30%'>
+### Outubro de 2020
+
+---
+
+
+
+
+
+
+
+
+class: middle, center
+
+# Sobre
+
+---
+class: middle, center
+
+## Sobre a Curso-R
+
+.pull-left[
+![](https://d33wubrfki0l68.cloudfront.net/295643c6243701ae6a9bac3fb8ad467ff0ce3c84/d1785/img/logo/cursor1-41.png)&lt;!-- --&gt;
+
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;img src="img/logo_r6.png" width="1344" /&gt;
+
+]
+
+.pull-right[
+&lt;img src="img/produtos.png" width="477" /&gt;
+]
+
+### [www.curso-r.com](https://www.curso-r.com)
+
+---
+## Sobre a apresentação
+
+- Primeira hora: introdução ao Shiny para quem nem sabe o que é Shiny. 
+
+&gt; **Objetivo**: aprendermos a construir um aplicativo simples e colocá-lo na internet.
+
+&lt;br&gt;
+
+- Segunra hora: apresentação de diversos recursos legais do Shiny.
+
+&gt; **Objetivo**: sairmos pessoas motivadas a aprender mais.
+
+class: middle, center
+
+# Introdução ao Shiny
+
+---
+## Shiny: programando em HTML sem saber HTML
+
+Com o Shiny, podemos produzir aplicativos web em HTML, CSS e JavaScript sem saber programar nessas linguagens. E melhor: sem sair do R!
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;img src="img/hex-shiny.png" style="position: fixed; top: 235px; left: 430px; z-index: 1;" width="6%"&gt;
+
+&lt;center&gt;
+&lt;img src="img/shiny.png" width = "50%"&gt;
+&lt;img src="img/shiny2.png" width = "50%"&gt;
+&lt;br&gt;
+Fonte: &lt;a href = http://www.rstudio.com/shiny/&gt;rstudio.com/shiny/&lt;/a&gt;
+&lt;/center&gt;
+
+---
+
+## Dashboards dinâmicos
+
+&lt;center&gt;
+&lt;img src="img/como-funciona.png", width = "80%"&gt;
+&lt;br&gt;
+Fonte: &lt;a href = http://www.rstudio.com/shiny/&gt;rstudio.com/shiny/&lt;/a&gt;
+&lt;/center&gt;
+
+---
+class: center, middle
+
+## [Exemplo de Shiny app em produção](https://rseis.shinyapps.io/exemplos/)
+
+---
+## Exemplo mínimo
+
+O código de qualquer aplicativo em Shiny terá a estrutura abaixo:
+
+- Um objeto chamado `ui`.
+
+- Uma função chamada `server`.
+
+- Uma chamada da função `shinyApp()`.
+
+
+```r
+library(shiny)
+
+ui &lt;- fluidPage("Olá, mundo!")
+
+server &lt;- function(input, output, session) {
+  
+}
+
+shinyApp(ui, server)
+```
+
+No RStudio, para rodar um aplicativo shiny localmente (o seu computador é o servidor), clique no botão **Run app** logo acima do script.
+
+---
+## Exemplo
+
+Vamos criar e rodar o exemplo minimal do slide anterior.
+
+&lt;center&gt;
+&lt;img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width = "300" height = "300"&gt;
+&lt;br&gt;
+&lt;br&gt;
+<span style="color:#6495ed; font-weight: bold;">Ao RStudio: 01-ola-mundo.R</span>
+&lt;center&gt;
+
+---
+## Inputs e Outputs
+
+Fazer um shiny app tem duas grandes tarefas: a construção do layout (veremos mais a frente) e a construção dos inputs e outputs.
+
+&lt;center&gt;
+&lt;img src="img/inputs_outputs.png" width = "100%"&gt;
+&lt;/center&gt;
+
+---
+## Outputs: tabelas, gráficos e muito mais!
+
+Outputs representam as *saídas* do nosso aplicativo, isto é, tudo que queremos que nosso código R retorne para o usuário. Essas saídas podem ser tabelas, gráficos, mapas, texto, imagens ou qualquer outro elemento em HTML.
+
+Os outputs são definidos no UI e criados no server. Cada tipo de output é definido por uma função do tipo `_Output()`. Veja as principais:
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Função &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Output &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; imageOutput() &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; imagens &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; plotOutput() &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; gráficos &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; tableOutput() &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; tabelas &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; textOutput() &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; textos &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+## Funções render
+
+Para criar um output, precisamos das funções do tipo `render_()`. Essas funções são responsáveis por conectar as nossas visualizações criadas pelo R com o código HTML do UI. Na grande maioria dos casos, teremos o par `visualizacaoOutput()` `renderVisualizacao()`. 
+
+Veja a seguir as principais funções `render_()` e como elas se comunicam com as funções `_Output()`.
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; _Output() &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; render_() &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; imageOutput() &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; renderImage() &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; plotOutput() &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; renderPlot() &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; tableOutput() &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; renderTable() &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; textOutput() &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; renderText() &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+---
+
+## Atividade
+
+Vamos criar e rodar um shiny app com um gráfico como output.
+
+&lt;br&gt;
+
+&lt;center&gt;
+&lt;img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width = "300" height = "300"&gt;
+&lt;br&gt;
+&lt;br&gt;
+<span style="color:#6495ed; font-weight: bold;">Ao RStudio: 02-output.R</span>
+&lt;center&gt;
+
+---
+## Inputs: dê controle ao usuário
+
+Inputs permitem que o usuário interaja com o seu aplicativo. Eles são criados no UI com funções (geralmente) do tipo `_Input()` e são utilizados dentro do server para alterar as visualizações. Veja alguns exemplos abaixo e acesse [este link](https://shiny.rstudio.com/gallery/widget-gallery.html) para testar como eles funcionam no navegador.
+
+&lt;center&gt;
+&lt;img src="img/inputs.png", width = "85%"&gt;
+&lt;br&gt;
+Fonte: &lt;a href = http://www.rstudio.com/shiny/&gt;rstudio.com/shiny/&lt;/a&gt;
+&lt;/center&gt;
+
+---
+## Atividade
+
+Vamos colocar um seletor de variáveis no exemplo anterior para permitir que o usuário escolha qual variável será exibida no histograma.
+
+&lt;br&gt;
+
+&lt;center&gt;
+&lt;img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width = "300" height = "300"&gt;
+&lt;br&gt;
+&lt;br&gt;
+<span style="color:#6495ed; font-weight: bold;">Ao RStudio: 03-output-input.R</span>
+&lt;/center&gt;
+
+---
+## Shinyapps.io
+
+O [shinyapps.io](https://www.shinyapps.io/) é um serviço do RStudio para hospedagem de Shiny apps.
+
+A conta gratuita permite você ter até 5 aplicações e 25 horas mensais de uso (um aplicativo utilizado por 1 hora consome 1 hora do seu plano, 2 aplicativos utilizados simultaneamente por 1 hora consomem 2 horas do seu plano).
+
+Criada uma conta, você poderá subir o seu app para o shinyapps.io diretamente do RStudio. Para isso, você precisará apenas conectar a sua conta com o RStudio.
+
+[Neste vídeo](), mostramos como conectar o shinyapps.io com o RStudio.
+
+---
+## Atividade
+
+Vamos conectar o nosso RStudio com o shinyapps.io e subir um app para lá.
+
+&lt;br&gt;
+
+&lt;center&gt;
+&lt;img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" width = "300" height = "300"&gt;
+&lt;br&gt;
+&lt;br&gt;
+<span style="color:#6495ed; font-weight: bold;">Ao RStudio: shinyapps/03-output-input.R</span>
+&lt;/center&gt;
+
+---
+## Referências e material extra
+
+### Tutoriais
+
+- [Tutorial de Shiny do Garrett Grolemund](https://shiny.rstudio.com/tutorial/)
+
+- [Mastering Shiny](https://mastering-shiny.org/)
+
+#### Galeria de Exemplos
+
+- [Galeria do Shiny](https://shiny.rstudio.com/gallery/)
+
+- [Site Show me Shiny](https://www.showmeshiny.com/)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "4:3"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

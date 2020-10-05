@@ -13,8 +13,7 @@ Repositório principal do curso Shiny: Zero a Hero.
 
 # Material
 
-- [Sobre nós](https://curso-r.github.io/latinr-shiny/slides/01-sobre.html)
-- [Apresentação](https://curso-r.github.io/latinr-shiny/slides/02-shiny-introducao.html)
+- [Apresentação](https://curso-r.github.io/latinr-shiny/slides/slides_latinr_shiny_zero_to_hero.html)
 - [Script 1: Olá Mundo](https://curso-r.github.io/latinr-shiny/scripts/01-ola-mundo.R)
 - [Script 2: Output](https://curso-r.github.io/latinr-shiny/scripts/02-output.R)
 - [Script 3: Output e Input](https://curso-r.github.io/latinr-shiny/scripts/03-output-input.R)
