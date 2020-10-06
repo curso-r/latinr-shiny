@@ -19,9 +19,8 @@ Repositório principal do curso Shiny: Zero a Hero.
 - [Script 3: Output e Input](https://curso-r.github.io/latinr-shiny/scripts/03-output-input.R)
 - [Script 4: Case](https://curso-r.github.io/latinr-shiny/scripts/04-case.R)
 - [Script 5: Case (live)](https://curso-r.github.io/latinr-shiny/scripts/05-dash.R)
-- [Exemplo em Golem](https://github.com/curso-r/latinr-shiny/tree/master/meuGolem)
+- [Exemplo em Golem](https://github.com/curso-r/latinr-shiny/tree/master/slides/meuGolem)
   
-
 # Ementa
 
 - **Introdução ao Shiny**
@@ -40,3 +39,46 @@ Repositório principal do curso Shiny: Zero a Hero.
 - **Deploy**
   - Hospedando um app no `shinyapps.io`
   - Como colocar senha no seu dashboard com o `auth0`
+
+# Outros materiais
+
+## Dashboards criado no evento:
+
+https://rseis.shinyapps.io/exemplo-latinR/
+
+https://rseis.shinyapps.io/latinr/
+
+## Links citados:
+
+Galeria Shiny:
+https://shiny.rstudio.com/gallery/widget-gallery.html
+
+Galeria RMarkdown:
+https://rmarkdown.rstudio.com/gallery.html
+
+Shiny Server:
+https://rstudio.com/products/shiny/download-server/
+
+Pacote shinydashboard:
+https://rstudio.github.io/shinydashboard/get_started.html
+
+Pacote dados:
+https://cienciadedatos.github.io/dados/
+
+Pacote datos:
+https://cienciadedatos.github.io/datos/
+
+Pacote bs4Dash:
+https://rinterface.github.io/bs4Dash/
+
+Pacote golem:
+https://thinkr-open.github.io/golem/
+
+Pacote esquisse:
+https://github.com/dreamRs/esquisse
+
+Pacote auth0:
+https://github.com/curso-r/auth0
+
+Youtube da Curso-R:
+https://www.youtube.com/c/CursoR6/featured
