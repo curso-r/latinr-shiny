@@ -31,8 +31,7 @@ Ementa
     -   O pacote `shinydasboard`
     -   O pacote `bs4Dash`
 -   **htmlwidgets**
-    -   Tabelas com `reactable`
-    -   Gráficos com `plotly`
+    -   Gráficos com `esquisse`
     -   Mapas com `leaflet`
 -   **Deploy**
     -   Hospedando um app no `shinyapps.io`
