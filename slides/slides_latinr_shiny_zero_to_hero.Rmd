@@ -66,6 +66,7 @@ knitr::include_graphics("img/produtos.png")
 
 > **Objetivo**: sairmos pessoas motivadas a aprender mais.
 
+---
 class: middle, center
 
 # Introdução ao Shiny
