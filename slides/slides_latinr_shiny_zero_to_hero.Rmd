@@ -230,7 +230,7 @@ A conta gratuita permite você ter até 5 aplicações e 25 horas mensais de uso
 
 Criada uma conta, você poderá subir o seu app para o shinyapps.io diretamente do RStudio. Para isso, você precisará apenas conectar a sua conta com o RStudio.
 
-[Neste vídeo](), mostramos como conectar o shinyapps.io com o RStudio.
+[Neste vídeo](https://www.youtube.com/watch?v=jRXubw0kOrg&ab_channel=Curso-R), mostramos como conectar o shinyapps.io com o RStudio.
 
 ---
 ## Atividade
