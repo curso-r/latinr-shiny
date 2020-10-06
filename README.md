@@ -16,7 +16,7 @@ Material
 -   [Script 5: Case
     (live)](https://curso-r.github.io/latinr-shiny/scripts/05-dash.R)
 -   [Exemplo em
-    Golem](https://github.com/curso-r/latinr-shiny/tree/master/slides/meuGolem)
+    {golem}](https://github.com/curso-r/latinr-shiny/tree/master/scripts/meuGolem)
 
 Ementa
 ======
