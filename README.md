@@ -1,33 +1,39 @@
 
 Repositório principal do curso Shiny: Zero a Hero.
 
-# Material
+Material
+========
 
-  - [Apresentação](https://curso-r.github.io/latinr-shiny/slides/slides_latinr_shiny_zero_to_hero.html)
-  - [Script 1: Olá
+-   [Apresentação](https://curso-r.github.io/latinr-shiny/slides/slides_latinr_shiny_zero_to_hero.html)
+-   [Script 1: Olá
     Mundo](https://curso-r.github.io/latinr-shiny/scripts/01-ola-mundo.R)
-  - [Script 2:
+-   [Script 2:
     Output](https://curso-r.github.io/latinr-shiny/scripts/02-output.R)
-  - [Script 3: Output e
+-   [Script 3: Output e
     Input](https://curso-r.github.io/latinr-shiny/scripts/03-output-input.R)
-  - [Script 4:
+-   [Script 4:
     Case](https://curso-r.github.io/latinr-shiny/scripts/04-case.R)
+-   [Script 5: Case
+    (live)](https://curso-r.github.io/latinr-shiny/scripts/05-dash.R)
+-   [Exemplo em
+    Golem](https://github.com/curso-r/latinr-shiny/tree/master/meuGolem)
 
-# Ementa
+Ementa
+======
 
-  - **Introdução ao Shiny**
-      - Dashboards estáticos e dinâmicos
-      - O que é o Shiny?
-      - UI e server
-      - Inputs e Outputs
-  - **Layout**
-      - Costumizando a aparência do dashboard
-      - O pacote `shinydasboard`
-      - O pacote `bs4Dash`
-  - **htmlwidgets**
-      - Tabelas com `reactable`
-      - Gráficos com `plotly`
-      - Mapas com `leaflet`
-  - **Deploy**
-      - Hospedando um app no `shinyapps.io`
-      - Como colocar senha no seu dashboard com o `auth0`
+-   **Introdução ao Shiny**
+    -   Dashboards estáticos e dinâmicos
+    -   O que é o Shiny?
+    -   UI e server
+    -   Inputs e Outputs
+-   **Layout**
+    -   Costumizando a aparência do dashboard
+    -   O pacote `shinydasboard`
+    -   O pacote `bs4Dash`
+-   **htmlwidgets**
+    -   Tabelas com `reactable`
+    -   Gráficos com `plotly`
+    -   Mapas com `leaflet`
+-   **Deploy**
+    -   Hospedando um app no `shinyapps.io`
+    -   Como colocar senha no seu dashboard com o `auth0`

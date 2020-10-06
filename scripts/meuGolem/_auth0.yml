@@ -1,0 +1,7 @@
+name: myApp
+remote_url: 'https://rseis.shinyapps.io/latinr'
+auth0_config:
+  api_url: "https://latinr.us.auth0.com"
+  credentials:
+    key:
+    secret:

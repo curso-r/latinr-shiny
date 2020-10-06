@@ -1,0 +1,27 @@
+Package: meuGolem
+Title: An Amazing Shiny App
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "firstname",
+           family = "lastname",
+           role = c("aut", "cre"),
+           email = "your@email.com")
+Description: What the package does (one paragraph).
+License: What license is it under?
+Imports: 
+    config (>= 0.3),
+    golem (>= 0.2.1.9031),
+    shiny (>= 1.5.0),
+    magrittr,
+    pkgload,
+    devtools,
+    esquisse,
+    bs4Dash,
+    leaflet,
+    auth0,
+    dados,
+    shinyjs
+Remotes: cienciadedatos/dados
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1

@@ -18,6 +18,9 @@ Repositório principal do curso Shiny: Zero a Hero.
 - [Script 2: Output](https://curso-r.github.io/latinr-shiny/scripts/02-output.R)
 - [Script 3: Output e Input](https://curso-r.github.io/latinr-shiny/scripts/03-output-input.R)
 - [Script 4: Case](https://curso-r.github.io/latinr-shiny/scripts/04-case.R)
+- [Script 5: Case (live)](https://curso-r.github.io/latinr-shiny/scripts/05-dash.R)
+- [Exemplo em Golem](https://github.com/curso-r/latinr-shiny/tree/master/meuGolem)
+  
 
 # Ementa
 

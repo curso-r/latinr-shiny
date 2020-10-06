@@ -1,0 +1,12 @@
+name: latinr
+title: latinr
+username:
+account: rseis
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2954675
+bundleId: 3708859
+url: https://rseis.shinyapps.io/latinr/
+when: 1601995956.2823
+asMultiple: FALSE
+asStatic: FALSE
